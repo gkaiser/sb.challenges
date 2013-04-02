@@ -4,7 +4,7 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P005(string[] AppArgs)
+	  public static void P005()
 	  {
 	    int minDiv = 1;
 	    int maxDiv = 20;

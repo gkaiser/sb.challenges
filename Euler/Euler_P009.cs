@@ -5,12 +5,9 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P009(string[] AppArgs)
+	  public static void P009()
 	  {
-	    if (AppArgs == null || AppArgs.Length < 1)
-	      AppArgs = new string[] { "1000" };
-	    
-	    int goalValue = Int32.Parse(AppArgs[0]);
+	    int goalValue = 1000;
 	    
 	    List<int> lstSquares = new List<int>();
 	    

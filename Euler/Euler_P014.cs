@@ -4,11 +4,11 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P014(string[] AppArgs)
+	  public static void P014()
 	  {
 	    DateTime dtStart = DateTime.Now;
 	    
-	    int s = (AppArgs.Length < 1 ? 1000000 : Int32.Parse(AppArgs[0]));
+	    int s = 1000000;
 	    
 	    int causesBigChain = 0;
 	    int biggestChainSteps = 0;

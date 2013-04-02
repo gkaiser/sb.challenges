@@ -5,9 +5,9 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P007(string[] AppArgs)
+	  public static void P007()
 	  {
-	    int getPrimeAt = Int32.Parse(AppArgs[0]);
+	    int getPrimeAt = 10001;
 	    int primesFound = 0;
 	    
 	    DateTime dtStart = DateTime.Now;

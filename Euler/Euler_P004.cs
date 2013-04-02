@@ -4,7 +4,7 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P004(string[] AppArgs)
+	  public static void P004()
 	  {
 	    int l = 0;
 	    int p = 0;

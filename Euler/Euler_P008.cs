@@ -4,7 +4,7 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P008(string[] AppArgs)
+	  public static void P008()
 	  {
 	    DateTime dtStart = DateTime.Now;
 	    

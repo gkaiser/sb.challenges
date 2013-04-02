@@ -4,11 +4,11 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P006(string[] AppArgs)
+	  public static void P006()
 	  {
 	    DateTime dtStart = DateTime.Now;
 	    
-	    int countTo = Int32.Parse(AppArgs[0]);
+	    int countTo = 100;
 	    int sumOfSqs = 0;
 	    int sqOfSums = 0;
 	    

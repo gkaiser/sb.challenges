@@ -4,7 +4,7 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P016(string[] Args)
+	  public static void P016()
 	  {
 	    Console.WriteLine(Math.Pow(2, 1).ToString());
 			Console.WriteLine(Math.Pow(2, 5).ToString());

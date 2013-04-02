@@ -4,9 +4,9 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P003(string[] Args)
+	  public static void P003()
 	  {
-	    long f = (Args.Length > 0 ? Int32.Parse(Args[0]) : 600851475143);
+	    long f = 600851475143;
 	    long b = 2;
 	    long k = 0;
 

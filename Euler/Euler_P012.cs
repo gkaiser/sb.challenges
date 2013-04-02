@@ -4,12 +4,9 @@ namespace Euler
 {
 	public partial class Solutions
 	{
-	  public static void P012(string[] AppArgs)
+	  public static void P012()
 	  {
-	    if (AppArgs == null || AppArgs.Length < 1)
-	      AppArgs = new string[] { "500" };
-	    
-	    int divGoal = Int32.Parse(AppArgs[0]);
+	    int divGoal = 500;
 	    int currTriNo = 0;
 	    
 	    for (int i = 1;  ; i++)
