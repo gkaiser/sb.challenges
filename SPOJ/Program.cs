@@ -6,30 +6,17 @@ namespace SPOJ
 	{
 		static void Main(string[] args)
 		{
-			string st = Console.ReadLine();
-			int t = int.Parse(st);
-			for (int i = 0; i < t; i++)
-			{
-				string mnline = Console.ReadLine();
-				string sm = mnline.Split(' ')[0];
-				string sn = mnline.Split(' ')[1];
-				int m = int.Parse(sm);
-				int n = int.Parse(sn);
+			//SPOJApp.P001();
+			SPOJApp.P002(args);
 
-				for (int j = m; j <= n; j++)
-					if (IsPrime(i))
-						Console.WriteLine(j.ToString());
-
-				Console.WriteLine();
-			}
 			return;
 		}
 
-		private static bool IsPrime(int n)
+		private static bool IsPrime(long n)
 		{
 			if (n < 2 || (n != 2 && n % 2 == 0))
 				return false;
-			for (int i = 3; i < (int)Math.Sqrt(n); i += 2)
+			for (long i = 3; i < (long)Math.Sqrt(n); i += 2)
 			{
 				if (n % i == 0)
 					return false;
@@ -52,25 +39,23 @@ namespace SPOJ
 		private static void P002(string[] args)
 		{
 			string st = Console.ReadLine();
-			int t = int.Parse(st);
-			for (int i = 0; i < t; i++)
+			long t = long.Parse(st);
+			for (long i = 0; i < t; i++)
 			{
 				string mnline = Console.ReadLine();
 				string sm = mnline.Split(' ')[0];
 				string sn = mnline.Split(' ')[1];
-				int m = int.Parse(sm);
-				int n = int.Parse(sn);
+				long m = long.Parse(sm);
+				long n = long.Parse(sn);
 
-				for (int j = m; j <= n; j++)
-					if (IsPrime(i))
+				for (long j = m; j <= n; j++)
+					if (IsPrime(j))
 						Console.WriteLine(j.ToString());
 
 				Console.WriteLine();
 			}
 			return;
 		}
-
-
 
 	}
 }
