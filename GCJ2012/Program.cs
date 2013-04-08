@@ -10,9 +10,10 @@ namespace GCJ2012
 	{
 		static void Main()
 		{
-			RoundQualification.SolveA("round-qualification-a-small-practice.in");
+			//RoundQualification.SolveA("round-qualification-a-small-practice.in");
+			RoundQualification.SolveB("round-qualification-b-small-example.in");
 
-			Console.WriteLine("==+");
+			Console.WriteLine("==>");
 			Console.Write("==> DONE, PRESS [ENTER] TO QUIT... ");
 			Console.ReadLine();
 		}
