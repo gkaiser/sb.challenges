@@ -9,10 +9,13 @@ namespace GCJ2013
 	{
 		static void Main(string[] args)
 		{
-			//RoundQualification.SolveA("round-qualification-a-sample.in");
-			RoundQualification.SolveA("round-qualification-a-small-practice.in");
+      DateTime dtStart = DateTime.Now;
 
-			Console.WriteLine("==>");
+			//RoundQualification.SolveA("round-qualification-a-sample.in");
+			//RoundQualification.SolveA("round-qualification-a-small.in");
+      RoundQualification.SolveA("round-qualification-a-large.in");
+
+      Console.WriteLine("==> " + DateTime.Now.Subtract(dtStart).ToString());
 			Console.Write("==> DONE, PRESS [ENTER] TO QUIT... ");
 			Console.ReadLine();
 		}

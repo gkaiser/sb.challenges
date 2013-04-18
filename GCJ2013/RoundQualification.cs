@@ -151,5 +151,29 @@ namespace GCJ2013
 			return line.All(c => c == player || c == 'T');
 		}
 
+
+    public static void SolveB(string inputFile)
+    {
+      string[] fileLines = File.ReadAllLines(inputFile);
+      int testCaseCount = int.Parse(fileLines[0]);
+      int startDataLine = 1;
+
+      for (int i = 0; i < testCaseCount; i++)
+      {
+        int lineCount = int.Parse(fileLines[i + startDataLine].Split(' ')[0]);
+        int pattCount = int.Parse(fileLines[i + startDataLine].Split(' ')[1]);
+
+        int[,] board = new int[lineCount, pattCount];
+
+        for (int j = 0; j < lineCount; j++)
+        {
+          
+        }
+
+
+      }
+
+    }
+
 	}
 }
