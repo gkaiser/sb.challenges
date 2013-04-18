@@ -13,7 +13,8 @@ namespace GCJ2013
 
 			//RoundQualification.SolveA("round-qualification-a-sample.in");
 			//RoundQualification.SolveA("round-qualification-a-small.in");
-      RoundQualification.SolveA("round-qualification-a-large.in");
+      //RoundQualification.SolveA("round-qualification-a-large.in");
+			RoundQualification.SolveB("round-qualification-b-sample.in");
 
       Console.WriteLine("==> " + DateTime.Now.Subtract(dtStart).ToString());
 			Console.Write("==> DONE, PRESS [ENTER] TO QUIT... ");

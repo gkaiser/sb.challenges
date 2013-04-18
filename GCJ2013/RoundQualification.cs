@@ -155,24 +155,40 @@ namespace GCJ2013
     public static void SolveB(string inputFile)
     {
       string[] fileLines = File.ReadAllLines(inputFile);
-      int testCaseCount = int.Parse(fileLines[0]);
-      int startDataLine = 1;
+			var lineEnumerator = fileLines.GetEnumerator();
+			lineEnumerator.MoveNext();
 
-      for (int i = 0; i < testCaseCount; i++)
-      {
-        int lineCount = int.Parse(fileLines[i + startDataLine].Split(' ')[0]);
-        int pattCount = int.Parse(fileLines[i + startDataLine].Split(' ')[1]);
+			int testCount = int.Parse((string)lineEnumerator.Current);
+			int caseLineCount = 0;
+			int casePattCount = 0;
 
-        int[,] board = new int[lineCount, pattCount];
+			List<int[,]> lstTestCases = new List<int[,]>();
+			int[,] tmpBoard = null;
 
-        for (int j = 0; j < lineCount; j++)
-        {
-          
-        }
+			while (lineEnumerator.MoveNext())
+			{
+				caseLineCount = int.Parse(((string)lineEnumerator.Current).Split(' ')[0]);
+				casePattCount = int.Parse(((string)lineEnumerator.Current).Split(' ')[1]);
+				tmpBoard = new int[caseLineCount, casePattCount];
 
+				for (int j = 0; j < caseLineCount; j++)
+				{
+					lineEnumerator.MoveNext();
+					string[] pattValues = ((string)lineEnumerator.Current).Split(' ');
 
-      }
+					for (int k = 0; k < pattValues.Length; k++)
+						tmpBoard[j, k] = int.Parse(pattValues[k]);
+				}
 
+				lstTestCases.Add(tmpBoard);
+			}
+
+			foreach (int[,] board in lstTestCases)
+			{
+
+			}
+
+			return;
     }
 
 	}
