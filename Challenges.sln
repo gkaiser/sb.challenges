@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPOJ", "SPOJ\SPOJ.csproj", "{3A32316F-287B-48D2-803E-4C0D91B4F88E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euler", "Euler\Euler.csproj", "{E07FB9D7-8B85-40DF-A541-AC3225DFAC8D}"
@@ -8,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCJ2012", "GCJ2012\GCJ2012.csproj", "{94C3AD96-E822-45F7-80E8-C053F75B730F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCJ2013", "GCJ2013\GCJ2013.csproj", "{0D007418-E810-4D33-8CFC-1D3BCC07F5AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode", "AdventOfCode\AdventOfCode.csproj", "{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,18 @@ Global
 		{0D007418-E810-4D33-8CFC-1D3BCC07F5AE}.Release|Mixed Platforms.Build.0 = Release|x86
 		{0D007418-E810-4D33-8CFC-1D3BCC07F5AE}.Release|x86.ActiveCfg = Release|x86
 		{0D007418-E810-4D33-8CFC-1D3BCC07F5AE}.Release|x86.Build.0 = Release|x86
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Debug|x86.Build.0 = Debug|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Release|x86.ActiveCfg = Release|Any CPU
+		{1C2AEB93-FB91-45C3-BDA4-11BF1B2C019A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
