@@ -41,11 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day01.cs" />
+    <Compile Include="Day02.cs" />
+    <Compile Include="Day03.cs" />
+    <Compile Include="Day04.cs" />
+    <Compile Include="Day05.cs" />
+    <Compile Include="Day06.cs" />
+    <Compile Include="Day07.cs" />
+    <Compile Include="Day08.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>copy /Y "$(ProjectDir)InputData\*.txt" "$(TargetDir)"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
