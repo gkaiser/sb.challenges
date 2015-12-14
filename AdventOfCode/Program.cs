@@ -23,7 +23,9 @@ namespace AdventOfCode
       //Day06.Process(false);
       //Day07.Process(true);
       //Day07.Process(false);
-      Day08.Process(true);
+      //Day08.Process(true);
+      //Day08.Process(false);
+      Day09.Process(true);
 
       Console.WriteLine();
       Console.Write("Finished, press any key to quit...");

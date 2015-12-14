@@ -66,7 +66,41 @@ namespace AdventOfCode
 
     private static void Part2()
     {
-      throw new NotImplementedException();
+      var encChars = 0;
+      for (int i = 0; i < Day08.Input.Count; i++)
+      {
+        var l = Day08.Input[i];
+        var enc = new StringBuilder("\"");
+        for (int j = 0; j < l.Length; j++)
+        {
+          if (l[j] == '\\')
+          {
+            enc.Append("\\\\");
+            continue;
+          }
+          if (l[j] == '"')
+          {
+            enc.Append("\\\"");
+            continue;
+          }
+
+          enc.Append(l[j]);
+        }
+
+        enc.Append("\"");
+
+        encChars += enc.Length;
+      }
+
+      var totChars = Day08.Input.Sum(s => s.Length);
+
+      Console.WriteLine(
+        "  " +
+        "Santa's list is a total of " + totChars + " code-characters, and " + encChars + " encoded characters. " +
+        "So the answer is " + (encChars - totChars) + ".");
+
+      // correct:
+      //   2074
     }
 
   }
