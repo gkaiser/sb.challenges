@@ -12,6 +12,8 @@ namespace AoC2016
 
     internal static void Solve_Part1()
     {
+      Console.WriteLine("Solving Day 02, Part 1...");
+
       int[,] keyPad = new int[3, 3];
       Day02.InitKeypad_Part1(ref keyPad);
 
@@ -53,6 +55,8 @@ namespace AoC2016
 
     internal static void Solve_Part2()
     {
+      Console.WriteLine("Solving Day 02, Part 2...");
+
       string[,] keyPad = new string[5, 5];
       Day02.InitKeypad_Part2(ref keyPad);
 

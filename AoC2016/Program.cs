@@ -17,6 +17,11 @@ namespace AoC2016
       //Day01.Solve_Part2();
       //Day02.Solve_Part1();
       //Day02.Solve_Part2();
+      //Day03.Solve_Part1();
+      //Day03.Solve_Part2();
+      //Day04.Solve_Part1();
+      //Day04.Solve_Part2();
+
 
       Console.WriteLine();
       Console.Write("Finished, press any key to quit...");
