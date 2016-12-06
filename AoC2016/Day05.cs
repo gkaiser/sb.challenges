@@ -7,6 +7,8 @@ namespace AoC2016
   {
     public static void Solve_Part1()
     {
+      Console.WriteLine("Solving Day 05, Part 1...");
+
       var md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
       var input = System.IO.File.ReadAllText("05.txt").Trim();
       //var input = "abc";
@@ -49,6 +51,8 @@ namespace AoC2016
 
     public static void Solve_Part2()
     {
+      Console.WriteLine("Solving Day 05, Part 1...");
+
       var md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
       var input = System.IO.File.ReadAllText("05.txt").Trim();
       //var input = "abc";
