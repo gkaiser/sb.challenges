@@ -10,6 +10,8 @@ namespace AoC2016
   {
     internal static void Solve_Part1()
     {
+      Console.WriteLine("Solving Day 08, Parts 1 & 2...");
+
       //var input = new[]
       //{
       //  "rect 3x2",
@@ -82,11 +84,6 @@ namespace AoC2016
 
           }
         }
-
-        Console.WriteLine("after " + instruct);
-        Console.WriteLine(new string('=', 55));
-        Day08.PrintDisplay(disp);
-        Console.WriteLine();
       }
 
       var litCt = 0;
@@ -99,12 +96,15 @@ namespace AoC2016
         }
       }
 
+      Day08.PrintDisplay(disp);
+      Console.WriteLine();
+
       // correct (Part 1):
       //   116
       // correct (Part 2):
       //   UPOJFLBCEZ
 
-      Console.WriteLine($"There should be {litCt} pixels lit.");
+      Console.WriteLine($"There are be {litCt} pixels lit.");
     }
 
     private static void PrintDisplay(int[,] disp)
