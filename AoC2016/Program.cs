@@ -10,8 +10,9 @@ namespace AoC2016
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Advent of Code");
-      Console.WriteLine("==============");
+      Console.WriteLine("=======================");
+      Console.WriteLine("= Advent of Code 2016 =");
+      Console.WriteLine("=======================");
 
       //Day01.Solve_Part1();
       //Day01.Solve_Part2();
