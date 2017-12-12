@@ -13,7 +13,9 @@ namespace AoC2017
       //Day01.Solve_Part1();
       //Day01.Solve_Part2();
       //Day02.Solve_Part1();
-      Day02.Solve_Part2();
+      //Day02.Solve_Part2();
+      //Day03.Solve_Part1_Att1(); // Takes FOR-EV-ER. Inefficient.
+      Day03.Solve_Part1_Att2();
 
       Console.WriteLine();
       Console.Write("Finished, press any key to quit...");
