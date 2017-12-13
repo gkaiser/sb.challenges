@@ -192,7 +192,6 @@ namespace AoC2017
         this.Y = y;
         this.Value = value;
       }
-
     }
 
   }
