@@ -53,12 +53,12 @@ namespace AoC2017
 
     internal static void Solve_Part2()
     {
-      //var input = new int[] { 0, 2, 7, 0 };
-      var textLine = System.IO.File.ReadAllText("Day06_Part1.txt"); // 1037
-      var textArr = textLine.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-      var input = new int[textArr.Length];
-      for (int i = 0; i < input.Length; i++)
-        input[i] = int.Parse(textArr[i]);
+      var input = new int[] { 0, 2, 7, 0 };
+      //var textLine = System.IO.File.ReadAllText("Day06_Part1.txt"); // 1037
+      //var textArr = textLine.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+      //var input = new int[textArr.Length];
+      //for (int i = 0; i < input.Length; i++)
+      //  input[i] = int.Parse(textArr[i]);
 
       var cycleCt = 0;
       var prevStates = new List<string>();
