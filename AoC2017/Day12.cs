@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace AoC2017
 {
@@ -10,17 +8,17 @@ namespace AoC2017
   {
     internal static void Solve_Part1()
     {
-      var input = new[]
-      {
-        "0 <-> 2",
-        "1 <-> 1",
-        "2 <-> 0, 3, 4",
-        "3 <-> 2, 4",
-        "4 <-> 2, 3, 6",
-        "5 <-> 6",
-        "6 <-> 4, 5",
-      };
-      //input = System.IO.File.ReadAllLines("Day12_Part1.txt");
+      //var input = new[]
+      //{
+      //  "0 <-> 2",
+      //  "1 <-> 1",
+      //  "2 <-> 0, 3, 4",
+      //  "3 <-> 2, 4",
+      //  "4 <-> 2, 3, 6",
+      //  "5 <-> 6",
+      //  "6 <-> 4, 5",
+      //};
+      var input = System.IO.File.ReadAllLines("Day12_Part1.txt");
 
       var pipes = new List<Pipe>();
 
@@ -40,21 +38,38 @@ namespace AoC2017
         }
       }
 
-      var nums = new List<int>();
-      foreach (var p in pipes.Where(p => p.End0 == 0 || p.End1 == 0))
-      {
-        if (!nums.Contains(p.End0))
-          nums.Add(p.End0);
-        if (!nums.Contains(p.End1))
-          nums.Add(p.End1);
+      Day12.Nums = new List<int>();
 
-        foreach (var n in nums)
+      Day12.FindConnectionsTo(pipes.ToArray(), 0);
+
+      Day12.Nums = Day12.Nums.Distinct().ToList();
+
+      Console.WriteLine($"We've got {Day12.Nums.Count} programs that can talk to program 0...");
+    }
+
+    private static List<int> Nums;
+
+    private static void FindConnectionsTo(Pipe[] pipes, int connectingTo)
+    {
+      if (!Day12.Nums.Contains(connectingTo))
+        Day12.Nums.Add(connectingTo);
+
+      var pMatch = pipes.Where(p => p.End0 == connectingTo || p.End1 == connectingTo).ToArray();
+
+      for (int i = 0; i < pMatch.Length; i++)
+      {
+        var p = pMatch[i];
+        if (!Day12.Nums.Contains(p.End0))
         {
-          
+          Day12.Nums.Add(p.End0);
+          Day12.FindConnectionsTo(pipes, p.End0);
+        }
+        if (!Day12.Nums.Contains(p.End1))
+        {
+          Day12.Nums.Add(p.End1);
+          Day12.FindConnectionsTo(pipes, p.End1);
         }
       }
-
-      Console.WriteLine($"We've got {pipes.Count} pipes to check from {input.Length} lines of input...");
     }
 
     private class Pipe
