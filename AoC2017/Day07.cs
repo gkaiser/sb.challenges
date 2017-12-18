@@ -110,11 +110,37 @@ namespace AoC2017
       }
 
       var baseNode = lstNodes.First(n => n.Parent == null);
+      var weightDict = new Dictionary<int, List<Node>>();
+
+      foreach (var cn in baseNode.Children)
+      {
+        var weight = cn.GetTotalWeight();
+
+        if (!weightDict.ContainsKey(weight))
+          weightDict.Add(weight, new List<Node>());
+
+        weightDict[weight].Add(cn);
+      }
+
+      foreach (var key in weightDict.Keys)
+      {
+        foreach (var n in weightDict[key])
+        {
+          Console.WriteLine($"  {n.Parent.Name}({key}).{n.Name} ==> ({n.GetTotalWeight()}) {n.Weight}");
+
+          if (n.Name == "pidgnp")
+          {
+            foreach (var c in n.Children)
+              Console.WriteLine($"    {c.Name} => {c.Weight}");
+          }
+        }
+
+      }
 
       var imb = baseNode.FindImbalancedChild();
       foreach (var cn in imb.Parent.Children)
       {
-        Console.WriteLine($"  {cn.Name} ==> {cn.Weight}");
+        //Console.WriteLine($"  {cn.Parent.Name}({cn.Parent.Weight}).{cn.Name} ==> {cn.Weight}");
       }
     }
 
@@ -134,9 +160,6 @@ namespace AoC2017
 
       public int GetTotalWeight()
       {
-        if (this.Children.Count == 0)
-          return this.Weight;
-
         var chWeight = 0;
         foreach (var cn in this.Children)
         {

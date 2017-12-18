@@ -54,7 +54,6 @@ namespace GCJ2016
 
     internal static void SolveProblemB(string infile)
     {
-      var dbg = true;
       var lines = System.IO.File.ReadAllLines(infile);
       var caseCt = int.Parse(lines[0]);
       var sb = new StringBuilder();

@@ -24,7 +24,17 @@ namespace AoC2017
       //Day06.Solve_Part1();
       //Day06.Solve_Part2();
       //Day07.Solve_Part1();
-      Day07.Solve_Part2();
+      //Day07.Solve_Part2();
+      //Day07_Cheat.Solve_Part2(); // FAAAAAAAAAAHK! Courtesy of https://www.reddit.com/user/dylanfromwinnipeg
+      //Day08.Solve_Part1();
+      //Day08.Solve_Part2();
+      //Day09.Solve_Part1();
+      //Day09.Solve_Part2();
+      //Day10.Solve_Part1();
+      //Day10.Solve_Part2();
+      //Day11.Solve_Part1();
+      //Day11.Solve_Part2();
+      Day12.Solve_Part1();
 
       Console.WriteLine();
       Console.Write("Finished, press any key to quit...");
