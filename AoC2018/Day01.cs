@@ -12,43 +12,40 @@ namespace AoC2018
       var frq = 0;
 
       foreach (var r in raw)
-        frq += int.Parse(r.Replace("+", ""));
+        frq += int.Parse(r);
 
       Console.WriteLine(frq);
     }
 
     internal static void SolvePart2()
     {
-      // this has gotta be wildy inefficient; it takes ~48s to solve this way
+      // this was wildy inefficient when using List<int>; it takes ~48s to solve this way
+      // switched to HashSet<int>, and got to under a second. WTF
       var watch = System.Diagnostics.Stopwatch.StartNew();
 
-      var raw = System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day01_P1.txt");
-      var enm = raw.GetEnumerator();
+      var inp = System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day01_P1.txt");
       var frq = 0;
-      var seen = new List<int>();
+      var seen = new HashSet<int>();
 
       while (true)
       {
-        if (!enm.MoveNext())
+        foreach (var c in inp)
         {
-          enm.Reset();
-          enm.MoveNext();
+          frq += int.Parse(c);
+
+          if (seen.Contains(frq))
+            goto P2End;
+
+          seen.Add(frq);
         }
-
-        var c = enm.Current.ToString();
-
-        frq += int.Parse(c.Replace("+", ""));
-
-        if (seen.Contains(frq))
-          break;
-        
-        seen.Add(frq);
       }
+
+      P2End:
 
       watch.Stop();
       var ts = TimeSpan.FromMilliseconds(watch.ElapsedMilliseconds);
 
-      Console.WriteLine($"A frequency of {frq} was first seen twice (this took {ts.Minutes}m {ts.Seconds}s to solve)...");
+      Console.WriteLine($"A frequency of {frq} was first seen twice (this took {ts} to solve)...");
     }
 
   }
