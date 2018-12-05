@@ -8,7 +8,7 @@ namespace AoC2018
   {
     internal static void SolvePart1()
     {
-      var lines = System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day02_P1.txt");
+      var lines = System.IO.File.ReadAllLines(@"Day02_P1.txt");
 
       var twoCt = 0;
       var threeCt = 0;
@@ -31,7 +31,7 @@ namespace AoC2018
 
     internal static void SolvePart2()
     {
-      var lines = System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day02_P1.txt");
+      var lines = System.IO.File.ReadAllLines(@"Day02_P1.txt");
       var defCc = Console.ForegroundColor;
 
       for (int i = 0; i < lines.Length; i++)

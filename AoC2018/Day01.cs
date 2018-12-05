@@ -8,7 +8,7 @@ namespace AoC2018
   {
     internal static void SolvePart1()
     {
-      var raw = System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day01_P1.txt");
+      var raw = System.IO.File.ReadAllLines(@"Day01_P1.txt");
       var frq = 0;
 
       foreach (var r in raw)
@@ -23,7 +23,7 @@ namespace AoC2018
       // switched to HashSet<int>, and got to under a second. WTF
       var watch = System.Diagnostics.Stopwatch.StartNew();
 
-      var inp = System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day01_P1.txt");
+      var inp = System.IO.File.ReadAllLines(@"Day01_P1.txt");
       var frq = 0;
       var seen = new HashSet<int>();
 

@@ -8,7 +8,7 @@ namespace AoC2018
   {
     internal static void Solve(bool useStrat1)
     {
-      var input = new List<string>(System.IO.File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day04_P1.txt"));
+      var input = new List<string>(System.IO.File.ReadAllLines(@"Day04_P1.txt"));
       input.Sort();
 
       var guards = new List<Guard>();

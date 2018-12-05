@@ -9,7 +9,7 @@ namespace AoC2018
   {
     internal static void SolvePart1()
     {
-      var lines = File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day03_P1.txt");
+      var lines = File.ReadAllLines(@"Day03_P1.txt");
       var dict = new Dictionary<Point, int>();
 
       foreach (var l in lines)
@@ -52,7 +52,7 @@ namespace AoC2018
 
     internal static void SolvePart2()
     {
-      var lines = File.ReadAllLines(@"M:\Documents\VS Projects\Challenges\AoC2018\InputData\Day03_P1.txt");
+      var lines = File.ReadAllLines(@"Day03_P1.txt");
       var dict = new Dictionary<Point, int>();
 
       foreach (var l in lines)
