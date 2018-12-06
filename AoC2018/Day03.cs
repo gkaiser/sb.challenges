@@ -113,6 +113,9 @@ namespace AoC2018
               break;
             }
           }
+
+          if (!allOk)
+            break;
         }
 
         if (allOk)

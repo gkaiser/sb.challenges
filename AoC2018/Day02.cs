@@ -8,21 +8,27 @@ namespace AoC2018
   {
     internal static void SolvePart1()
     {
-      var lines = System.IO.File.ReadAllLines(@"Day02_P1.txt");
-
       var twoCt = 0;
       var threeCt = 0;
 
-      foreach (var l in lines)
+      foreach (var l in System.IO.File.ReadAllLines(@"Day02_P1.txt"))
       {
         if (string.IsNullOrWhiteSpace(l))
           continue;
 
-        var bid = new BoxId(l.Trim());
+        var cc = new Dictionary<char, int>();
 
-        if (bid.HasTwoRepeatingLetters)
+        foreach (var c in l.Trim())
+        {
+          if (!cc.ContainsKey(c))
+            cc.Add(c, 0);
+
+          cc[c]++;
+        }
+
+        if (cc.Values.Any(v => v == 2))
           twoCt++;
-        if (bid.HasThreeRepeatingLetters)
+        if (cc.Values.Any(v => v == 3))
           threeCt++;
       }
 
@@ -97,31 +103,6 @@ namespace AoC2018
           }
         }
       }
-    }
-
-    internal class BoxId
-    {
-      internal string Id;
-      private Dictionary<char, int> CharCounts;
-
-      internal BoxId(string id)
-      {
-        this.Id = id;
-        this.CharCounts = new Dictionary<char, int>();
-
-        foreach (var c in this.Id)
-        {
-          if (!this.CharCounts.ContainsKey(c))
-            this.CharCounts.Add(c, 0);
-
-          this.CharCounts[c]++;
-        }
-      }
-
-      internal bool HasTwoRepeatingLetters => this.CharCounts.Values.Any(v => v == 2);
-
-      internal bool HasThreeRepeatingLetters => this.CharCounts.Values.Any(v => v == 3);
-
     }
 
   }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -8,44 +9,28 @@ namespace AoC2018
   {
     internal static void SolvePart1()
     {
-      var raw = System.IO.File.ReadAllLines(@"Day01_P1.txt");
-      var frq = 0;
-
-      foreach (var r in raw)
-        frq += int.Parse(r);
-
-      Console.WriteLine(frq);
+      Console.WriteLine(File.ReadAllLines(@"Day01_P1.txt").Sum(r => int.Parse(r)));
     }
 
     internal static void SolvePart2()
     {
       // this was wildy inefficient when using List<int>; it takes ~48s to solve this way
       // switched to HashSet<int>, and got to under a second. WTF
-      var watch = System.Diagnostics.Stopwatch.StartNew();
-
-      var inp = System.IO.File.ReadAllLines(@"Day01_P1.txt");
+      var inp = File.ReadAllLines(@"Day01_P1.txt");
       var frq = 0;
       var seen = new HashSet<int>();
 
-      while (true)
+      for (int i = 0; ; i++)
       {
-        foreach (var c in inp)
-        {
-          frq += int.Parse(c);
+        frq += int.Parse(inp[i % inp.Length]);
 
-          if (seen.Contains(frq))
-            goto P2End;
+        if (seen.Contains(frq))
+          break;
 
-          seen.Add(frq);
-        }
+        seen.Add(frq);
       }
 
-      P2End:
-
-      watch.Stop();
-      var ts = TimeSpan.FromMilliseconds(watch.ElapsedMilliseconds);
-
-      Console.WriteLine($"A frequency of {frq} was first seen twice (this took {ts} to solve)...");
+      Console.WriteLine($"A frequency of {frq} was first seen twice...");
     }
 
   }
