@@ -15,6 +15,11 @@ namespace AoC2018
 
     public override string ToString() => $"{{{this.X}, {this.Y}}}";
 
+    public int GetManhattanDistanceFromPoint(Point pDest)
+    {
+      return Math.Abs(pDest.X - this.X) + Math.Abs(pDest.Y - this.Y);
+    }
+
   }
 
 }
