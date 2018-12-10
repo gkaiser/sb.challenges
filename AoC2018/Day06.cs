@@ -67,24 +67,33 @@ namespace AoC2018
     public static void Cheater(bool solvePart1)
     {
       var input = System.IO.File.ReadAllLines("Day06_P1.txt");
-      var testMode = false;
 
-      int minX = int.MaxValue, minY = int.MaxValue;
-      int maxX = 0, maxY = 0;
+      int minX = int.MaxValue;
+      int minY = int.MaxValue;
+      int maxX = 0;
+      int maxY = 0;
       int maxArea = 0;
-      int distanceLimit = testMode ? 32 : 10000;
+      int distanceLimit = 10000;
 
       var points = new Dictionary<Point, int>();
       for (int i = 0; i < input.Length; i++)
       {
         var coords = input[i].Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-        int x = int.Parse(coords[0]), y = int.Parse(coords[1]);
-        minX = Math.Min(x, minX); minY = Math.Min(y, minY); maxX = Math.Max(x, maxX); maxY = Math.Max(y, maxY);
+        int x = int.Parse(coords[0]);
+        int y = int.Parse(coords[1]);
+
+        minX = Math.Min(x, minX);
+        minY = Math.Min(y, minY);
+        maxX = Math.Max(x, maxX);
+        maxY = Math.Max(y, maxY);
+
         points.Add(new Point(x, y), 0);
       }
 
       var grid = new Dictionary<Point, (int dist, Point point)>();
+
       for (int x = minX - 1; x <= maxX + 1; x++)
+      {
         for (int y = minY - 1; y <= maxY + 1; y++)
         {
           if (solvePart1)
@@ -112,8 +121,10 @@ namespace AoC2018
               maxArea++;
           }
         }
+      }
 
       if (solvePart1)
+      {
         foreach (var kvp in grid)
         {
           if ((kvp.Value.point.X == -1 && kvp.Value.point.Y == -1) || points[kvp.Value.point] == -1)
@@ -127,9 +138,9 @@ namespace AoC2018
 
           maxArea = Math.Max(maxArea, ++points[kvp.Value.point]);
         }
+      }
 
-
-      Console.WriteLine(maxArea.ToString());
+      Console.WriteLine(maxArea);
     }
 
   }
