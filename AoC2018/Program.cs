@@ -21,7 +21,10 @@ namespace AoC2018
       //Day06.SolvePart1();
       //Day06.Cheater(true);
       //Day06.Cheater(false);
-      Day07.SolvePart1();
+      //Day07.SolvePart1();
+      //Day07.SolvePart2();
+      //Day08.SolvePart1();
+      //Day08.SolvePart2();
 
       sw.Stop();
 
