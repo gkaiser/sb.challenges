@@ -46,7 +46,6 @@
     <Compile Include="Arrays_ArrayManipulation.cs" />
     <Compile Include="Arrays_DS.cs" />
     <Compile Include="Arrays_LeftRotation.cs" />
-    <Compile Include="Arrays_Crush.cs" />
     <Compile Include="Arrays_DynArray.cs" />
     <Compile Include="Arrays_SparseArrays.cs" />
     <Compile Include="Program.cs" />
