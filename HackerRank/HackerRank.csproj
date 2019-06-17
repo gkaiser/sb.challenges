@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms_BetweenTwoSets.cs" />
+    <Compile Include="Algorithms_GradingStudents.cs" />
+    <Compile Include="Algorithms_Kangaroo.cs" />
+    <Compile Include="Algorithms_Random.cs" />
     <Compile Include="Arrays_ArrayManipulation.cs" />
     <Compile Include="Arrays_DS.cs" />
     <Compile Include="Arrays_LeftRotation.cs" />
     <Compile Include="Arrays_DynArray.cs" />
     <Compile Include="Arrays_SparseArrays.cs" />
+    <Compile Include="Algorithms_AppleOrange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees_PreorderTraversal.cs" />
