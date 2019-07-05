@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms_BetweenTwoSets.cs" />
+    <Compile Include="Algorithms_BirthdayChocolate.cs" />
+    <Compile Include="Algorithms_BreakingTheRecords.cs" />
+    <Compile Include="Algorithms_DivisibleSumPairs.cs" />
     <Compile Include="Algorithms_GradingStudents.cs" />
     <Compile Include="Algorithms_Kangaroo.cs" />
+    <Compile Include="Algorithms_MigratoryBirds.cs" />
     <Compile Include="Algorithms_Random.cs" />
     <Compile Include="Arrays_ArrayManipulation.cs" />
     <Compile Include="Arrays_DS.cs" />
