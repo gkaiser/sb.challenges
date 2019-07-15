@@ -37,6 +37,17 @@ namespace HackerRank
       //Algorithms_BreakingTheRecords.Solve();
       //Algorithms_BirthdayChocolate.Solve();
       //Algorithms_MigratoryBirds.Solve();
+      //Algorithms_DayOfTheProgrammer.Solve();
+      //Algorithms_BonAppetit.Solve();
+      //Algorithms_SockMerchant.Solve();
+      //Algorithms_DrawingBook.Solve();
+      //Algorithms_CountingValleys.Solve();
+      //Algorithms_ElectronicsShop.Solve();
+      //Algorithms_CatsAndAMouse.Solve();
+      Algorithms_FormingAMagicSquare.Solve();
+
+
+
 
       Console.WriteLine();
       Console.Write("Done, press [ENTER] to quit... ");
