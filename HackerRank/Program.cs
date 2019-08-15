@@ -38,6 +38,8 @@ namespace HackerRank
       //Algorithms_BirthdayChocolate.Solve();
       //Algorithms_MigratoryBirds.Solve();
 
+      Algorithms_DesignerPdfViewer.Solve();
+
       Console.WriteLine();
       Console.Write("Done, press [ENTER] to quit... ");
       Console.ReadLine();

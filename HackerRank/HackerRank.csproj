@@ -46,6 +46,7 @@
     <Compile Include="Algorithms_BetweenTwoSets.cs" />
     <Compile Include="Algorithms_BirthdayChocolate.cs" />
     <Compile Include="Algorithms_BreakingTheRecords.cs" />
+    <Compile Include="Algorithms_DesignerPdfViewer.cs" />
     <Compile Include="Algorithms_DivisibleSumPairs.cs" />
     <Compile Include="Algorithms_GradingStudents.cs" />
     <Compile Include="Algorithms_Kangaroo.cs" />
