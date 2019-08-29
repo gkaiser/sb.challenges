@@ -45,13 +45,21 @@
   <ItemGroup>
     <Compile Include="Algorithms_BetweenTwoSets.cs" />
     <Compile Include="Algorithms_BirthdayChocolate.cs" />
+    <Compile Include="Algorithms_BonAppetit.cs" />
     <Compile Include="Algorithms_BreakingTheRecords.cs" />
     <Compile Include="Algorithms_DesignerPdfViewer.cs" />
+    <Compile Include="Algorithms_CatsAndAMouse.cs" />
+    <Compile Include="Algorithms_CountingValleys.cs" />
+    <Compile Include="Algorithms_DayOfTheProgrammer.cs" />
     <Compile Include="Algorithms_DivisibleSumPairs.cs" />
+    <Compile Include="Algorithms_DrawingBook.cs" />
+    <Compile Include="Algorithms_ElectronicsShop.cs" />
+    <Compile Include="Algorithms_FormingAMagicSquare.cs" />
     <Compile Include="Algorithms_GradingStudents.cs" />
     <Compile Include="Algorithms_Kangaroo.cs" />
     <Compile Include="Algorithms_MigratoryBirds.cs" />
     <Compile Include="Algorithms_Random.cs" />
+    <Compile Include="Algorithms_SockMerchant.cs" />
     <Compile Include="Arrays_ArrayManipulation.cs" />
     <Compile Include="Arrays_DS.cs" />
     <Compile Include="Arrays_LeftRotation.cs" />
