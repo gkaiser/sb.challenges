@@ -44,7 +44,8 @@ namespace HackerRank
       //Algorithms_CountingValleys.Solve();
       //Algorithms_ElectronicsShop.Solve();
       //Algorithms_CatsAndAMouse.Solve();
-      Algorithms_FormingAMagicSquare.Solve();
+      //Algorithms_FormingAMagicSquare.Solve();
+
 
 
 
