@@ -77,8 +77,8 @@ namespace HackerRank
         }
       }
 
-      var max = 0l;
-      var cur = 0l;
+      var max = 0L;
+      var cur = 0L;
 
       foreach (var mod in fake.Values)
       {
