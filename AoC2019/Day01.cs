@@ -8,7 +8,6 @@ namespace AoC2019
   {
     public static void SolvePart1()
     {
-      Console.WriteLine("Solving Day 01 P1...");
       var lines = System.IO.File.ReadAllLines(@"Day01_P1.txt");
 
       var fuel = lines.ToList().Select(l => Math.Floor(decimal.Parse(l) / 3m) - 2).Sum();
@@ -18,7 +17,6 @@ namespace AoC2019
 
     internal static void SolvePart2()
     {
-      Console.WriteLine("Solving Day 01 P2...");
       //var lines = new[] { "1969" };
       var lines = System.IO.File.ReadAllLines(@"Day01_P1.txt");
       var fuel = 0m;
