@@ -74,35 +74,50 @@ namespace AoC2019
           return false;
       }
 
-      var hasAdj = false;
-      var hasBadAdj = false;
-      for (int i = 0; i < str.Length; i++)
+      var digits = $"{pwd}".Select(pd => int.Parse($"{pd}")).ToArray();
+
+      int j = 0;
+      while (j < digits.Length)
       {
-        var t = $"{str[i]}";
-        var j = 1;
-        while (i + j < str.Length && str[i + j] == str[i])
+        var next = digits[j++];
+        int ct = 1;
+
+        while (j < digits.Length && digits[j] == next)
         {
-          t += str[i + j];
+          ct++;
           j++;
         }
 
-        if (t.Length % 2 == 0)
-        {
-          hasAdj = true;
-          i += t.Length;
-        }
-        if (t.Length > 2 && t.Length % 2 != 0)
-        {
-          hasBadAdj = true;
-          break;
-        }
+        if (ct == 2)
+          return true;
       }
+
+      return false;
+
+      //var hasAdj = false;
+      //for (int i = 0; i < str.Length; i++)
+      //{
+      //  var t = $"{str[i]}";
+      //  var j = 1;
+      //  while (i + j < str.Length && str[i + j] == str[i])
+      //  {
+      //    t += str[i + j];
+      //    j++;
+      //  }
+
+      //  if (t.Length == 2)
+      //  {
+      //    hasAdj = true;
+      //    i += t.Length;
+      //  }
+      //}
 
       // 901 - HIGH
       // 594 - LOW
       // 849 - LOW
+      // 876 - CORRECT
 
-      return hasAdj && !hasBadAdj;
+      //return hasAdj;
     }
 
   }
