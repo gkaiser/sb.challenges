@@ -61,6 +61,48 @@ namespace AoC2019
           Console.WriteLine($"{p1}");
           i += 2;
         }
+        else if (op == 5)
+        {
+          var p1 = (m1 == ParameterMode.PositionMode ? prog[prog[i + 1]] : prog[i + 1]);
+          var p2 = (m2 == ParameterMode.PositionMode ? prog[prog[i + 2]] : prog[i + 2]);
+
+          if (p1 != 0)
+            i = p2;
+          else
+            i += 3;
+        }
+        else if (op == 6)
+        {
+          var p1 = (m1 == ParameterMode.PositionMode ? prog[prog[i + 1]] : prog[i + 1]);
+          var p2 = (m2 == ParameterMode.PositionMode ? prog[prog[i + 2]] : prog[i + 2]);
+
+          if (p1 == 0)
+            i = p2;
+          else
+            i += 3;
+        }
+        else if (op == 7)
+        {
+          var p1 = (m1 == ParameterMode.PositionMode ? prog[prog[i + 1]] : prog[i + 1]);
+          var p2 = (m2 == ParameterMode.PositionMode ? prog[prog[i + 2]] : prog[i + 2]);
+          var p3 = prog[i + 3];
+
+          prog[p3] = (p1 < p2 ? 1 : 0);
+
+          i += 4;
+        }
+        else if (op == 8)
+        {
+          var p1 = (m1 == ParameterMode.PositionMode ? prog[prog[i + 1]] : prog[i + 1]);
+          var p2 = (m2 == ParameterMode.PositionMode ? prog[prog[i + 2]] : prog[i + 2]);
+          var p3 = prog[i + 3];
+
+          prog[p3] = (p1 == p2 ? 1 : 0);
+
+          i += 4;
+        }
+
+        //Console.WriteLine($"{i:00000}  {string.Join(" ", prog)}");
       }
     }
 

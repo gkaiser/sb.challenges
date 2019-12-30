@@ -17,7 +17,8 @@ namespace AoC2019
       //Day04.SolvePart1();
       //Day04.SolvePart2();
       //Day05.SolvePart1();
-      Day05.SolvePart2();
+      //Day05.SolvePart2();
+      Day06.SolvePart1();
 
       sw.Stop();
 
