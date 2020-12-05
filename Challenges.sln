@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank", "HackerRank\Ha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2019", "AoC2019\AoC2019.csproj", "{646A4A3B-4F41-4637-AC14-1937CBDDAE2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2020", "AoC2020\AoC2020.csproj", "{10058078-78D4-4F01-B5D0-087E9E804FAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +189,18 @@ Global
 		{646A4A3B-4F41-4637-AC14-1937CBDDAE2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{646A4A3B-4F41-4637-AC14-1937CBDDAE2E}.Release|x86.ActiveCfg = Release|Any CPU
 		{646A4A3B-4F41-4637-AC14-1937CBDDAE2E}.Release|x86.Build.0 = Release|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Debug|x86.Build.0 = Debug|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Release|x86.ActiveCfg = Release|Any CPU
+		{10058078-78D4-4F01-B5D0-087E9E804FAC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
