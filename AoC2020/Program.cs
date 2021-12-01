@@ -18,6 +18,9 @@ namespace AoC2020
       //Day04.SolvePart2();
       //Day05.SolvePart1();
       //Day05.SolvePart2();
+      //Day06.SolvePart1();
+      //Day06.SolvePart2();
+      Day07.SolvePart1();
 
       sw.Stop();
 
