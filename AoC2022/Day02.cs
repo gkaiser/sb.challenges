@@ -16,10 +16,10 @@ namespace AoC2022
     private static Dictionary<string, RpsChoice> ChoiceMap = new()
     {
       { "A", RpsChoice.Rock },
-      { "X", RpsChoice.Rock },
       { "B", RpsChoice.Paper },
-      { "Y", RpsChoice.Paper },
       { "C", RpsChoice.Scissors },
+      { "X", RpsChoice.Rock },
+      { "Y", RpsChoice.Paper },
       { "Z", RpsChoice.Scissors },
     };
 
@@ -82,7 +82,6 @@ namespace AoC2022
       if ((int)p1 == (int)p2) 
         return null;
 
-      // special cases of
       // rock vs paper and paper vs rock
       if ((int)p1 == 1 && (int)p2 == 3)
         return true;
