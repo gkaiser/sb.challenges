@@ -26,12 +26,16 @@ namespace AoC2022
         var p1s = l.Split(',')[0];
         var p2s = l.Split(',')[1];
 
-        var p1 = Enumerable.Range(int.Parse(p1s.Split('-')[0]), int.Parse(p1s.Split('-')[1]) - int.Parse(p1s.Split('-')[0]) + 1).ToArray();
-        var p2 = Enumerable.Range(int.Parse(p2s.Split('-')[0]), int.Parse(p2s.Split('-')[1]) - int.Parse(p2s.Split('-')[0]) + 1).ToArray();
+        var p1beg = int.Parse(p1s.Split('-')[0]);
+        var p1len = int.Parse(p1s.Split('-')[1]) - int.Parse(p1s.Split('-')[0]) + 1;
+        var p1 = Enumerable.Range(p1beg, p1len).ToArray();
 
-        if (p1.Intersect(p2).ToArray().Length == p1.Length || p1.Intersect(p2).ToArray().Length == p2.Length)
+        var p2beg = int.Parse(p2s.Split('-')[0]);
+        var p2len = int.Parse(p2s.Split('-')[1]) - int.Parse(p2s.Split('-')[0]) + 1;
+        var p2 = Enumerable.Range(p2beg, p2len).ToArray();
+
+        if (p1.Intersect(p2).Count() == p1.Length || p1.Intersect(p2).Count() == p2.Length)
           ct++;
-
       }
 
       Console.WriteLine($"There are {ct} assignment-pairs where one fully contains the other...");
@@ -48,8 +52,13 @@ namespace AoC2022
         var p1s = l.Split(',')[0];
         var p2s = l.Split(',')[1];
 
-        var p1 = Enumerable.Range(int.Parse(p1s.Split('-')[0]), int.Parse(p1s.Split('-')[1]) - int.Parse(p1s.Split('-')[0]) + 1).ToArray();
-        var p2 = Enumerable.Range(int.Parse(p2s.Split('-')[0]), int.Parse(p2s.Split('-')[1]) - int.Parse(p2s.Split('-')[0]) + 1).ToArray();
+        var p1beg = int.Parse(p1s.Split('-')[0]);
+        var p1len = int.Parse(p1s.Split('-')[1]) - int.Parse(p1s.Split('-')[0]) + 1;
+        var p1 = Enumerable.Range(p1beg, p1len).ToArray();
+
+        var p2beg = int.Parse(p2s.Split('-')[0]);
+        var p2len = int.Parse(p2s.Split('-')[1]) - int.Parse(p2s.Split('-')[0]) + 1;
+        var p2 = Enumerable.Range(p2beg, p2len).ToArray();
 
         if (p1.Intersect(p2).ToArray().Length > 0)
           ct++;

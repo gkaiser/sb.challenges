@@ -15,6 +15,8 @@ namespace AoC2022
       "CrZsJsPPZsGzwwsLwLmpwMDw",
     };
 
+    private static readonly string CharPointMap = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     internal static void SolvePart1()
     {
       //var inp = Day03.TestInput;
@@ -27,13 +29,7 @@ namespace AoC2022
         var c2 = rsack.Substring(rsack.Length / 2);
         var comm = c1.Intersect(c2);
 
-        foreach (var c in comm)
-        {
-          if (c >= 97 && c <= 122)
-            priSum += c - 96;
-          else if (c >= 65 && c <= 90)
-            priSum += c - 38;
-        }
+        priSum += comm.Sum(c => Day03.CharPointMap.IndexOf(c));
       }
 
       // 8105
@@ -53,13 +49,7 @@ namespace AoC2022
         var s3 = inp[i + 2];
         var comm = s1.Intersect(s2).Intersect(s3);
 
-        foreach (var c in comm)
-        {
-          if (c >= 97 && c <= 122)
-            priSum += c - 96;
-          else if (c >= 65 && c <= 90)
-            priSum += c - 38;
-        }
+        priSum += comm.Sum(c => Day03.CharPointMap.IndexOf(c));
       }
 
       // 2363
