@@ -1,28 +1,9 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace AoC2022
 {
   internal class Day02
   {
-    private enum RpsChoice
-    {
-      Rock = 1,
-      Paper = 2,
-      Scissors = 3
-    }
-
-    private static Dictionary<string, RpsChoice> ChoiceMap = new()
-    {
-      { "A", RpsChoice.Rock },
-      { "B", RpsChoice.Paper },
-      { "C", RpsChoice.Scissors },
-      { "X", RpsChoice.Rock },
-      { "Y", RpsChoice.Paper },
-      { "Z", RpsChoice.Scissors },
-    };
-
     private static string[] TestInput = new[]
     {
       "A Y",
@@ -39,12 +20,15 @@ namespace AoC2022
       foreach (var r in inp)
       {
         var pm = r.Split(' ');
-        var p1 = Day02.ChoiceMap[pm[0]];
-        var p2 = Day02.ChoiceMap[pm[1]];
-
-        var p1Win = DoesPlayer1Win(p1, p2);
-
-        score += (int)p2 + (!p1Win.HasValue ? 3 : p1Win.Value ? 0 : 6);
+        var p1 = "ABC".IndexOf(pm[0]);
+        var p2 = "XYZ".IndexOf(pm[1]);
+        
+        score += 
+          (p2 + 1) +
+          (p1 == p2 ? 3 : 
+           p1 == 0 && p2 == 2 ? 0 : 
+           p1 == 2 && p2 == 0 ? 6 : 
+           p1 > p2 ? 0 : 6);
       }
 
       Console.WriteLine($"Player 2's score would be {score}...");
@@ -59,37 +43,29 @@ namespace AoC2022
       foreach (var r in inp)
       {
         var pm = r.Split(' ');
-        var p1 = Day02.ChoiceMap[pm[0]];
+        var p1 = "ABC".IndexOf(pm[0]);
         var ps = pm[1];
-        var p2 = RpsChoice.Rock;
 
-        if (ps == "X") // lose
-          p2 = (p1 == RpsChoice.Rock ? RpsChoice.Scissors : p1 == RpsChoice.Paper ? RpsChoice.Rock : RpsChoice.Paper);
-        else if (ps == "Y") // draw
-          p2 = p1;
-        else // win
-          p2 = (p1 == RpsChoice.Rock ? RpsChoice.Paper : p1 == RpsChoice.Paper ? RpsChoice.Scissors : RpsChoice.Rock);
-
-        score += (int)p2 + (ps == "X" ? 0 : ps == "Y" ? 3 : 6);
+        switch (ps)
+        {
+          case "X": // lose
+            score += (p1 == 0 ? 2 : p1 - 1) + 1;
+            score += 0;
+            break;
+          case "Y": // draw
+            score += p1 + 1;
+            score += 3;
+            break;
+          case "Z": // win
+            score += (p1 == 2 ? 0 : p1 + 1) + 1;
+            score += 6;
+            break;
+          default:
+            throw new Exception("wth bro");
+        }
       }
 
       Console.WriteLine($"Player 2's score would be {score}...");
-    }
-
-    private static bool? DoesPlayer1Win(RpsChoice p1, RpsChoice p2)
-    {
-      // draw - return null
-      if ((int)p1 == (int)p2) 
-        return null;
-
-      // rock vs paper and paper vs rock
-      if ((int)p1 == 1 && (int)p2 == 3)
-        return true;
-      if ((int)p1 == 3 && (int)p2 == 1)
-        return false;
-
-      // everything else can be choice-value of p1 > choice-value of p2
-      return (int)p1 > (int)p2;
     }
 
   }

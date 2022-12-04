@@ -22,8 +22,8 @@ namespace AoC2022
       if (System.Diagnostics.Debugger.IsAttached)
       {
         Console.WriteLine();
-        Console.Write($"Done! Finished in {sw.Elapsed}. Press [ENTER] to quit... ");
-        Console.ReadLine();
+        Console.Write($"Done! Finished in {sw.Elapsed}. Press any key to quit... ");
+        Console.ReadKey();
       }
     }
 
