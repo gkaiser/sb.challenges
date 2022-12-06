@@ -54,13 +54,13 @@ namespace AoC2022
       {
         var inst = inp[i].Split(' ');
         var ct = int.Parse(inst[1]);
-        var src = int.Parse(inst[3]);
-        var dest = int.Parse(inst[5]);
+        var src = int.Parse(inst[3]) - 1;
+        var dest = int.Parse(inst[5]) - 1;
 
-        var rem = new string(stacks[src - 1].Substring(stacks[src - 1].Length - ct).ToCharArray().Reverse().ToArray());
+        var rem = new string(stacks[src].Substring(stacks[src].Length - ct).ToCharArray().Reverse().ToArray());
 
-        stacks[src - 1] = stacks[src - 1].Substring(0, stacks[src - 1].Length - ct);
-        stacks[dest - 1] += rem;
+        stacks[src] = stacks[src].Substring(0, stacks[src].Length - ct);
+        stacks[dest] += rem;
       }
 
       var top = "";
@@ -106,13 +106,13 @@ namespace AoC2022
       {
         var inst = inp[i].Split(' ');
         var ct = int.Parse(inst[1]);
-        var src = int.Parse(inst[3]);
-        var dest = int.Parse(inst[5]);
+        var src = int.Parse(inst[3]) - 1;
+        var dest = int.Parse(inst[5]) - 1;
 
-        var rem = stacks[src - 1].Substring(stacks[src - 1].Length - ct);
+        var rem = stacks[src].Substring(stacks[src].Length - ct);
 
-        stacks[src - 1] = stacks[src - 1].Substring(0, stacks[src - 1].Length - ct);
-        stacks[dest - 1] += rem;
+        stacks[src] = stacks[src].Substring(0, stacks[src].Length - ct);
+        stacks[dest] += rem;
       }
 
       var top = "";
