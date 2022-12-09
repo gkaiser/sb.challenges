@@ -24,6 +24,7 @@ namespace AoC2022
       //Day07.SolvePart2();
       //Day08.SolvePart1();
       //Day08.SolvePart2();
+      Day09.SolvePart1();
 
       sw.Stop();
 
