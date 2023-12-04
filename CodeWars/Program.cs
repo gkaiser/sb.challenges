@@ -57,7 +57,6 @@ namespace CodeWars
     {
       private HashSet<int> Primes;
 
-      public 
 
     }
 
