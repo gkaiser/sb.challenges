@@ -21,8 +21,6 @@ namespace AoC2023
 
       foreach (var l in inp)
       {
-        var ns = "";
-
         var ca = l.Where(c => char.IsDigit(c)).ToArray();
         if (ca.Length == 1)
           ca = new[] { ca[0], ca[0] };

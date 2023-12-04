@@ -10,11 +10,9 @@ namespace AoC2023
       //Day01.SolvePart2();
       //Day02.SolvePart1();
       //Day02.SolvePart2();
-      Day03.SolvePart1();
-            Console.WriteLine();
-            Console.WriteLine();
-            Day03.SolvePart2();
-      //Day04.SolvePart1();
+      //Day03.SolvePart1();
+      //Day03.SolvePart2();
+      Day04.SolvePart1();
       //Day04.SolvePart2();
 
       if (System.Diagnostics.Debugger.IsAttached)
