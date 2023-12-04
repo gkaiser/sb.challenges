@@ -46,58 +46,39 @@ namespace AoC2023
             posns.Add(new Pt(x, y));
           }
 
-          var right = posns.Max(p => p.X);
-          var left = posns.Min(p => p.X);
-
-          // check right
-          if (right + 1 < inp[y].Length && symbols.Contains(inp[y][right + 1]))
-          {
-            nums.Add(int.Parse(ts));
-            continue;
-          }
-
-          // check left
-          if (left - 1 >= 0 && symbols.Contains(inp[y][left - 1]))
-          {
-            nums.Add(int.Parse(ts));
-            continue;
-          }
-
           foreach (var p in posns)
           {
-            // check above
-            if (p.Y - 1 > 0 && p.X - 1 > 0 && symbols.Contains(inp[p.Y - 1][p.X - 1]))
+            var foundSymbol = false;
+
+            for (int k = -1; k <= 1; k++)
             {
-              nums.Add(int.Parse(ts));
-              break;
-            }
-            if (p.Y - 1 > 0 && symbols.Contains(inp[p.Y - 1][p.X]))
-            {
-              nums.Add(int.Parse(ts));
-              break;
-            }
-            if (p.Y - 1 > 0 && p.X + 1 < inp[p.Y].Length && symbols.Contains(inp[p.Y - 1][p.X + 1]))
-            {
-              nums.Add(int.Parse(ts));
-              break;
+              var yInRange = p.Y + k >= 0 && p.Y + k < inp.Length;
+
+              // we can do a second loop here for the x-position as well, but it feels
+              // a little forced for just 3 positions. plus, it'd be another loop we'd
+              // have to break out of. meh.
+              if (yInRange && p.X - 1 > 0 && symbols.Contains(inp[p.Y + k][p.X - 1]))
+              {
+                nums.Add(int.Parse(ts));
+                foundSymbol = true;
+                break;
+              }
+              if (yInRange && symbols.Contains(inp[p.Y + k][p.X]))
+              {
+                nums.Add(int.Parse(ts));
+                foundSymbol = true;
+                break;
+              }
+              if (yInRange && p.X + 1 < inp[p.Y].Length && symbols.Contains(inp[p.Y + k][p.X + 1]))
+              {
+                nums.Add(int.Parse(ts));
+                foundSymbol = true;
+                break;
+              }
             }
 
-            // check below
-            if (p.Y + 1 < inp.Length && p.X - 1 > 0 && symbols.Contains(inp[p.Y + 1][p.X - 1]))
-            {
-              nums.Add(int.Parse(ts));
+            if (foundSymbol)
               break;
-            }
-            if (p.Y + 1 < inp.Length && symbols.Contains(inp[p.Y + 1][p.X]))
-            {
-              nums.Add(int.Parse(ts));
-              break;
-            }
-            if (p.Y + 1 < inp.Length && p.X + 1 < inp[p.Y].Length && symbols.Contains(inp[p.Y + 1][p.X + 1]))
-            {
-              nums.Add(int.Parse(ts));
-              break;
-            }
           }
         }
       }
@@ -143,84 +124,43 @@ namespace AoC2023
             posns.Add(new Pt(x, y));
           }
 
-          var right = posns.Max(p => p.X);
-          var left = posns.Min(p => p.X);
-
-          // check right
-          if (right + 1 < inp[y].Length && inp[y][right + 1] == '*')
-          {
-            if (gears.Any(g => g.Posn == new Pt(right + 1, y)))
-              gears.First(g => g.Posn == new Pt(right + 1, y)).AdjNums.Add(int.Parse(ts));
-            else
-              gears.Add(new Gear { Posn = new Pt(right + 1, y), AdjNums = [int.Parse(ts)] });
-
-            continue;
-          }
-
-          // check left
-          if (left - 1 >= 0 && inp[y][left - 1] == '*')
-          {
-            if (gears.Any(g => g.Posn == new Pt(left - 1, y)))
-              gears.First(g => g.Posn == new Pt(left - 1, y)).AdjNums.Add(int.Parse(ts));
-            else
-              gears.Add(new Gear { Posn = new Pt(left - 1, y), AdjNums = [int.Parse(ts)] });
-
-            continue;
-          }
-
           foreach (var p in posns)
           {
-            // check above
-            if (p.Y - 1 > 0 && p.X - 1 > 0 && inp[p.Y - 1][p.X - 1] == '*')
+            var foundGear = false;
+
+            for (int k = -1; k <= 1; k++)
             {
-              if (gears.Any(g => g.Posn == new Pt(p.X - 1, p.Y - 1)))
-                gears.First(g => g.Posn == new Pt(p.X - 1, p.Y - 1)).AdjNums.Add(int.Parse(ts));
-              else
-                gears.Add(new Gear { Posn = new Pt(p.X - 1, p.Y - 1), AdjNums = [int.Parse(ts)] });
-              break;
-            }
-            if (p.Y - 1 > 0 && inp[p.Y - 1][p.X] == '*')
-            {
-              if (gears.Any(g => g.Posn == new Pt(p.X, p.Y - 1)))
-                gears.First(g => g.Posn == new Pt(p.X, p.Y - 1)).AdjNums.Add(int.Parse(ts));
-              else
-                gears.Add(new Gear { Posn = new Pt(p.X, p.Y - 1), AdjNums = [int.Parse(ts)] });
-              break;
-            }
-            if (p.Y - 1 > 0 && p.X + 1 < inp[p.Y].Length && inp[p.Y - 1][p.X + 1] == '*')
-            {
-              if (gears.Any(g => g.Posn == new Pt(p.X + 1, p.Y - 1)))
-                gears.First(g => g.Posn == new Pt(p.X + 1, p.Y - 1)).AdjNums.Add(int.Parse(ts));
-              else
-                gears.Add(new Gear { Posn = new Pt(p.X + 1, p.Y - 1), AdjNums = [int.Parse(ts)] });
-              break;
+              var yc = p.Y + k;
+              var yInRange = yc >= 0 && yc < inp.Length;
+
+              if (yInRange && p.X - 1 >= 0 && inp[yc][p.X - 1] == '*')
+              {
+                if (gears.Any(g => g.Posn == new Pt(p.X - 1, yc)))
+                  gears.First(g => g.Posn == new Pt(p.X - 1, yc)).AdjNums.Add(int.Parse(ts));
+                else
+                  gears.Add(new Gear { Posn = new Pt(p.X - 1, yc), AdjNums = [int.Parse(ts)] });
+                foundGear = true;
+              }
+              if (yInRange && inp[p.Y + k][p.X] == '*')
+              {
+                if (gears.Any(g => g.Posn == new Pt(p.X, yc)))
+                  gears.First(g => g.Posn == new Pt(p.X, yc)).AdjNums.Add(int.Parse(ts));
+                else
+                  gears.Add(new Gear { Posn = new Pt(p.X, yc), AdjNums = [int.Parse(ts)] });
+                foundGear = true;
+              }
+              if (yInRange && p.X + 1 < inp[yc].Length && inp[yc][p.X + 1] == '*')
+              {
+                if (gears.Any(g => g.Posn == new Pt(p.X + 1, yc)))
+                  gears.First(g => g.Posn == new Pt(p.X + 1, yc)).AdjNums.Add(int.Parse(ts));
+                else
+                  gears.Add(new Gear { Posn = new Pt(p.X + 1, yc), AdjNums = [int.Parse(ts)] });
+                foundGear = true;
+              }
             }
 
-            // check below
-            if (p.Y + 1 < inp.Length && p.X - 1 > 0 && inp[p.Y + 1][p.X - 1] == '*')
-            {
-              if (gears.Any(g => g.Posn == new Pt(p.X - 1, p.Y + 1)))
-                gears.First(g => g.Posn == new Pt(p.X - 1, p.Y + 1)).AdjNums.Add(int.Parse(ts));
-              else
-                gears.Add(new Gear { Posn = new Pt(p.X - 1, p.Y + 1), AdjNums = [int.Parse(ts)] });
+            if (foundGear)
               break;
-            }
-            if (p.Y + 1 < inp.Length && inp[p.Y + 1][p.X] == '*')
-            {
-              if (gears.Any(g => g.Posn == new Pt(p.X, p.Y + 1)))
-                gears.First(g => g.Posn == new Pt(p.X, p.Y + 1)).AdjNums.Add(int.Parse(ts));
-              else
-                gears.Add(new Gear { Posn = new Pt(p.X, p.Y + 1), AdjNums = [int.Parse(ts)] });
-              break;
-            }
-            if (p.Y + 1 < inp.Length && p.X + 1 < inp[p.Y].Length && inp[p.Y + 1][p.X + 1] == '*')
-            {
-              if (gears.Any(g => g.Posn == new Pt(p.X + 1, p.Y + 1)))
-                gears.First(g => g.Posn == new Pt(p.X + 1, p.Y + 1)).AdjNums.Add(int.Parse(ts));
-              else
-                gears.Add(new Gear { Posn = new Pt(p.X + 1, p.Y + 1), AdjNums = [int.Parse(ts)] });
-              break;
-            }
           }
         }
       }
@@ -228,12 +168,6 @@ namespace AoC2023
       var ratios = new List<int>();
       foreach (var g in gears)
       {
-        //Console.WriteLine($"Gear at {{{g.Posn}}}:");
-        //foreach (var n in g.AdjNums)
-        //{
-        //  Console.WriteLine($"  {n}");
-        //}
-
         if (g.AdjNums.Count == 2)
           ratios.Add(g.AdjNums[0] * g.AdjNums[1]);
       }
