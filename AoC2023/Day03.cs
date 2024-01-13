@@ -131,9 +131,12 @@ namespace AoC2023
             for (int k = -1; k <= 1; k++)
             {
               var yc = p.Y + k;
+              
               var yInRange = yc >= 0 && yc < inp.Length;
+              if (!yInRange)
+                continue;
 
-              if (yInRange && p.X - 1 >= 0 && inp[yc][p.X - 1] == '*')
+              if (p.X - 1 >= 0 && inp[yc][p.X - 1] == '*')
               {
                 if (gears.Any(g => g.Posn == new Pt(p.X - 1, yc)))
                   gears.First(g => g.Posn == new Pt(p.X - 1, yc)).AdjNums.Add(int.Parse(ts));
@@ -141,7 +144,7 @@ namespace AoC2023
                   gears.Add(new Gear { Posn = new Pt(p.X - 1, yc), AdjNums = [int.Parse(ts)] });
                 foundGear = true;
               }
-              if (yInRange && inp[p.Y + k][p.X] == '*')
+              if (inp[p.Y + k][p.X] == '*')
               {
                 if (gears.Any(g => g.Posn == new Pt(p.X, yc)))
                   gears.First(g => g.Posn == new Pt(p.X, yc)).AdjNums.Add(int.Parse(ts));
@@ -149,7 +152,7 @@ namespace AoC2023
                   gears.Add(new Gear { Posn = new Pt(p.X, yc), AdjNums = [int.Parse(ts)] });
                 foundGear = true;
               }
-              if (yInRange && p.X + 1 < inp[yc].Length && inp[yc][p.X + 1] == '*')
+              if (p.X + 1 < inp[yc].Length && inp[yc][p.X + 1] == '*')
               {
                 if (gears.Any(g => g.Posn == new Pt(p.X + 1, yc)))
                   gears.First(g => g.Posn == new Pt(p.X + 1, yc)).AdjNums.Add(int.Parse(ts));
