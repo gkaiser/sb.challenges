@@ -11,8 +11,4 @@
     <Folder Include="InputData\" />
   </ItemGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="copy /Y &quot;$(ProjectDir)InputData\*.txt&quot; &quot;$(TargetDir)&quot;" />
-  </Target>
-
 </Project>

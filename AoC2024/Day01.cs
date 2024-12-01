@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 
 namespace AoC2024
 {
@@ -20,16 +21,8 @@ namespace AoC2024
       //};
       var inp = File.ReadAllLines("Day01.txt");
 
-      var ll = new List<int>();
-      var lr = new List<int>();
-
-      foreach (var l in inp)
-      {
-        var v = l.Split(' ');
-
-        ll.Add(int.Parse(v.First()));
-        lr.Add(int.Parse(v.Last()));
-      }
+      var ll = inp.Select(il => int.Parse(il.Split("   ")[0])).ToList();
+      var lr = inp.Select(il => int.Parse(il.Split("   ")[1])).ToList();
 
       ll.Sort();
       lr.Sort();
@@ -41,8 +34,6 @@ namespace AoC2024
       }
 
       Console.WriteLine(dist);
-
-      
     }
 
     internal static void SolvePart2()
@@ -58,16 +49,8 @@ namespace AoC2024
       //};
       var inp = File.ReadAllLines("Day01.txt");
 
-      var ll = new List<int>();
-      var lr = new List<int>();
-
-      foreach (var l in inp)
-      {
-        var v = l.Split(' ');
-
-        ll.Add(int.Parse(v.First()));
-        lr.Add(int.Parse(v.Last()));
-      }
+      var ll = inp.Select(il => int.Parse(il.Split("   ")[0])).ToList();
+      var lr = inp.Select(il => int.Parse(il.Split("   ")[1])).ToList();
 
       var siml = 0;
       for (int i = 0; i < ll.Count; i++)

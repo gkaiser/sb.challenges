@@ -47,36 +47,37 @@ namespace AoC2023
       };
       //var inp = System.IO.File.ReadAllLines("Day05.txt");
 
-      var seeds = inp[0].Split(':')[1].Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(ulong.Parse).ToArray();
+      //var seeds = inp[0].Split(':')[1].Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(ulong.Parse).ToArray();
 
-      var maps = new List<Tuple<ulong, ulong, ulong>>();
+      //var maps = new List<Tuple<ulong, ulong, ulong>>();
 
-      for (int i = 3; i < inp.Length; i++)
-      {
-        while (inp[i] != "")
-        {
-          var vals = inp[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+      //for (int i = 3; i < inp.Length; i++)
+      //{
+      //  while (inp[i] != "")
+      //  {
+      //    var vals = inp[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-          maps.Add(new Tuple<ulong, ulong, ulong>(ulong.Parse(vals[0]), ulong.Parse(vals[1]), ulong.Parse(vals[2])));
-        }
+      //    maps.Add(new Tuple<ulong, ulong, ulong>(ulong.Parse(vals[0]), ulong.Parse(vals[1]), ulong.Parse(vals[2])));
+      //  }
 
-        // now we're on the blank line, skip to next num-line
-        i += 2;
+      //  // now we're on the blank line, skip to next num-line
+      //  i += 2;
 
-        // process the seeds with the latest maps
+      //  // process the seeds with the latest maps
+      //  ulong src = 0;
 
-        for (int j = 0; j < seeds.Length; j++)
-        {
-          if (seeds[j] < src)
-            continue;
-          if (seeds[j] < src + rng)
-          {
-            //          50    98      98
-            seeds[j] = dst + (src - seeds[j]);
-            continue;
-          }
-        }
-      }
+      //  for (int j = 0; j < seeds.Length; j++)
+      //  {
+      //    if (seeds[j] < src)
+      //      continue;
+      //    if (seeds[j] < src + rng)
+      //    {
+      //      //          50    98      98
+      //      seeds[j] = dst + (src - seeds[j]);
+      //      continue;
+      //    }
+      //  }
+      //}
 
       Console.WriteLine("p1...");
     }
