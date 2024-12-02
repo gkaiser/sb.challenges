@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2023", "AoC2023\AoC2023.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2024", "AoC2024\AoC2024.csproj", "{FA865231-1246-454D-BD47-ED3E1E84E585}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoCbot", "AoCbot\AoCbot.csproj", "{260EAF0D-2157-4F1A-BF83-F3F592671E2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -271,6 +273,18 @@ Global
 		{FA865231-1246-454D-BD47-ED3E1E84E585}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FA865231-1246-454D-BD47-ED3E1E84E585}.Release|x86.ActiveCfg = Release|Any CPU
 		{FA865231-1246-454D-BD47-ED3E1E84E585}.Release|x86.Build.0 = Release|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Debug|x86.Build.0 = Debug|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Release|x86.ActiveCfg = Release|Any CPU
+		{260EAF0D-2157-4F1A-BF83-F3F592671E2D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
