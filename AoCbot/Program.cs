@@ -27,7 +27,8 @@ namespace AoCbot
           Program.SetSessionCookie(inp);
         if (cmd == "get-data")
           Program.GetData(inp);
-        
+        if (cmd == "get-aoc-stats")
+          Program.GetAocStats(inp);
       }
 
       if (System.Diagnostics.Debugger.IsAttached)
@@ -43,8 +44,14 @@ namespace AoCbot
       Console.WriteLine("Available commands:");
       Console.WriteLine("=================================================");
       Console.WriteLine("set-session-id [AoC HTTP 'session' cookie]");
-      Console.WriteLine("get-data [year] [dayr]");
+      Console.WriteLine("get-data       [year] [day]");
+      Console.WriteLine("get-aoc-stats  [year]");
+      Console.WriteLine();
+    }
 
+    private static HttpWebRequest GetWebReq(string url)
+    {
+      var req = HttpWebRequest.Create(url);
     }
 
     private static void SetSessionCookie(string inp)
@@ -55,6 +62,7 @@ namespace AoCbot
       var ch = new HttpClientHandler() { CookieContainer = cc };
 
       Program.HttpClient = new HttpClient(ch);
+      Program.HttpClient.DefaultRequestHeaders.Add("User-Agent", "github.com/gkaiser/sb.challenges by grkaiser@gmail.com");
 
       cc.Add(new Uri("https://adventofcode.com"), new Cookie("session", vals[1]));
     }
@@ -72,12 +80,23 @@ namespace AoCbot
       var aocDay = int.Parse(vals[2]);
 
       // https://adventofcode.com/[year]/day/[day]/input
-      var tres = Program.HttpClient.GetStringAsync($"https://adventofcode.com/{aocYear}/day/{aocDay}/input");
-
-      tres.Wait();
-      var str = tres.Result;
+      var str = Program.HttpClient.GetStringAsync($"https://adventofcode.com/{aocYear}/day/{aocDay}/input").GetAwaiter().GetResult();
 
       Console.WriteLine(str);
+    }
+
+    private static void GetAocStats(string inp)
+    {
+      var vals = inp.Split(" ");
+      if (vals.Length != 2)
+      {
+        Console.WriteLine($"Invalid number of arguments passed: get-aoc-stats [year]");
+        return;
+      }
+
+      var aocYear = vals[1];
+
+
     }
 
   }
