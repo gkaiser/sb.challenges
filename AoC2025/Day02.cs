@@ -11,7 +11,7 @@ namespace AoC2025
 		{
 			//var inp = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,\r\n1698522-1698528,446443-446449,38593856-38593862,565653-565659,\r\n824824821-824824827,2121212118-2121212124";
 			var inp = File.ReadAllText("Day02.txt").Trim();
-
+			var sw = System.Diagnostics.Stopwatch.StartNew();
 			var tot = 0L;
 
 			foreach (var ir in inp.Split(','))
@@ -26,7 +26,7 @@ namespace AoC2025
 				}
 			}
 
-			Console.WriteLine($"{tot}");
+			Console.WriteLine($"{tot} (in {sw.Elapsed})");
 		}
 
 		private static bool IsAPart1Pattern(string pp)
@@ -46,7 +46,7 @@ namespace AoC2025
 		{
 			//var inp = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,\r\n1698522-1698528,446443-446449,38593856-38593862,565653-565659,\r\n824824821-824824827,2121212118-2121212124";
 			var inp = File.ReadAllText("Day02.txt").Trim();
-
+			var sw = System.Diagnostics.Stopwatch.StartNew();
 			var tot = 0L;
 
 			foreach (var ir in inp.Split(','))
@@ -61,7 +61,7 @@ namespace AoC2025
 				}
 			}
 
-			Console.WriteLine($"{tot}");
+			Console.WriteLine($"{tot} (in {sw.Elapsed})");
 		}
 
 		private static bool IsAPart2Pattern(string pp)
