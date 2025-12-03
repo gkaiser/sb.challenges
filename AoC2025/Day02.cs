@@ -61,7 +61,7 @@ namespace AoC2025
 				}
 			}
 
-			Console.WriteLine($"{tot} ({sw.Elapsed})");
+			Console.WriteLine($"{tot}");
 		}
 
 		private static bool IsAPart2Pattern(string pp)

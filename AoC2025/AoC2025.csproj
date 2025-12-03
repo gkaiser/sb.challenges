@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if EXIST &quot;$(ProjectDir)InputData&quot; (&#xD;&#xA;  copy /Y &quot;$(ProjectDir)InputData\*.txt&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;)&#xD;&#xA;" />
+    <Exec Condition="$([MSBuild]::IsOsPlatform('Windows'))" Command="if EXIST &quot;$(ProjectDir)InputData&quot; (&#xD;&#xA;  copy /Y &quot;$(ProjectDir)InputData\*.txt&quot; &quot;$(TargetDir)&quot;&#xD;&#xA;)&#xD;&#xA;" />
   </Target>
 
 </Project>
