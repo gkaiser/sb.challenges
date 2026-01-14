@@ -7,18 +7,6 @@ namespace AoC2025
 	{
 		internal static void SolvePart1()
 		{
-			//var inp = new[] {
-			//	"L68",
-			//	"L30",
-			//	"R48",
-			//	"L5",
-			//	"R60",
-			//	"L55",
-			//	"L1",
-			//	"L99",
-			//	"R14",
-			//	"L82",
-			//};
 			var inp = File.ReadAllLines("Day01.txt");
 
 			var zct = 0;
@@ -42,18 +30,6 @@ namespace AoC2025
 
 		internal static void SolvePart2()
 		{
-			//var inp = new[] {
-			//	"L68",
-			//	"L30",
-			//	"R48",
-			//	"L5",
-			//	"R60",
-			//	"L55",
-			//	"L1",
-			//	"L99",
-			//	"R14",
-			//	"L82",
-			//};
 			var inp = File.ReadAllLines("Day01.txt");
 
 			var zct = 0;

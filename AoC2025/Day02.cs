@@ -9,7 +9,6 @@ namespace AoC2025
 	{
 		internal static void SolvePart1()
 		{
-			//var inp = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,\r\n1698522-1698528,446443-446449,38593856-38593862,565653-565659,\r\n824824821-824824827,2121212118-2121212124";
 			var inp = File.ReadAllText("Day02.txt").Trim();
 			var sw = System.Diagnostics.Stopwatch.StartNew();
 			var tot = 0L;
@@ -44,7 +43,6 @@ namespace AoC2025
 
 		internal static void SolvePart2()
 		{
-			//var inp = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,\r\n1698522-1698528,446443-446449,38593856-38593862,565653-565659,\r\n824824821-824824827,2121212118-2121212124";
 			var inp = File.ReadAllText("Day02.txt").Trim();
 			var sw = System.Diagnostics.Stopwatch.StartNew();
 			var tot = 0L;
@@ -90,7 +88,6 @@ namespace AoC2025
 			
 			return false;
 		}
-
 
 	}
 }
